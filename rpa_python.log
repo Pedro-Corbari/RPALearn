@@ -1,0 +1,32 @@
+
+START - automation started - Thu Jun 23 2022 21:28:26 GMT-0300 (Hora oficial do Brasil)
+
+LIVE MODE - type done to quit
+ [RPA][STARTED]
+[RPA][0] - listening for inputs
+[RPA][1] - http://dados.tce.rs.gov.br/organization/tribunal-de-contas-do-estado-do-rio-grande-do-sul
+[RPA][1] - listening for inputs
+[RPA][2] - exist_result = exist('//*[@id="field-giant-search"]').toString()
+[RPA][2] - listening for inputs
+[RPA][3] - dump exist_result to rpa_python.txt
+[RPA][3] - listening for inputs
+[RPA][4] - type //*[@id="field-giant-search"] as Licitações Consolidado 2022[enter]
+[RPA][4] - listening for inputs
+[RPA][5] - exist_result = exist('//*[@id="content"]/div[3]/div/article/div/ul/li[1]/div/h3/a').toString()
+[RPA][5] - listening for inputs
+[RPA][6] - dump exist_result to rpa_python.txt
+[RPA][6] - listening for inputs
+[RPA][7] - click //*[@id="content"]/div[3]/div/article/div/ul/li[1]/div/h3/a
+[RPA][7] - listening for inputs
+[RPA][8] - exist_result = exist('//*[@id="dataset-resources"]/ul/li/div/button').toString()
+[RPA][8] - listening for inputs
+[RPA][9] - dump exist_result to rpa_python.txt
+[RPA][9] - listening for inputs
+[RPA][10] - click //*[@id="dataset-resources"]/ul/li/div/button
+[RPA][10] - listening for inputs
+[RPA][11] - exist_result = exist('//*[@id="dataset-resources"]/ul/li/div/ul/li[2]/a').toString()
+[RPA][11] - listening for inputs
+[RPA][12] - dump exist_result to rpa_python.txt
+[RPA][12] - listening for inputs
+[RPA][13] - click //*[@id="dataset-resources"]/ul/li/div/ul/li[2]/a
+[RPA][13] - listening for inputs

@@ -1,0 +1,27 @@
+import pyautogui as p
+
+# p.hotkey('win','r')
+# p.sleep(1)
+# p.typewrite('notepad')
+# p.sleep(1)
+# p.press('enter')
+# p.sleep(1)
+# p.typewrite('Hello World')
+# p.sleep(2)
+# valor = p.getActiveWindow()
+# valor.close()
+# p.press('right')
+# p.sleep(2)
+# p.press('enter')
+
+# p.sleep(2)
+# print(p.position())
+
+# p.click(x=351, y=20, duration=1)
+# p.sleep(1)
+# p.click(x=444, y=989, duration=1)
+# p.sleep(1)
+# p.click(x=844, y=990, duration=1)
+# p.typewrite('kevin viadao')
+# p.sleep(1)
+# p.press('enter')
