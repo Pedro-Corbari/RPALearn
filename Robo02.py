@@ -1,12 +1,18 @@
+import datetime
 import os
 import shutil
 import tkinter
 import zipfile
 import rpa as r
 import pyautogui as p
-import pandas as pd
 from tkinter import messagebox
+import Teste
 
+
+
+
+def convertDate(date):
+    return datetime.datetime.strptime(str(date), '%d/%m/%Y')  # .strftime('%Y-%m-%d')
 
 if not os.path.exists('C:\RPA\ArquivosDescompactados'):
     os.makedirs('C:\RPA\ArquivosDescompactados')
@@ -22,11 +28,15 @@ r.click('//*[@id="dataset-resources"]/ul/li/div/button')
 r.wait(2.0)
 r.click('//*[@id="dataset-resources"]/ul/li/div/ul/li[2]/a')
 
+
 while not os.path.isfile('2022.csv.zip'):
     p.sleep(1)
     if os.path.isfile('2022.csv.zip'):
         break
 r.close()
+
+
+
 with zipfile.ZipFile('2022.csv.zip', 'r') as zip_ref:
     zip_ref.extractall('C:\RPA\ArquivosDescompactados')
 
@@ -43,19 +53,12 @@ for file in files_to_move:
     shutil.move(source, destination)
     print('Moved:', file)
 
+
 shutil.rmtree('C:\RPA\ArquivosDescompactados', ignore_errors=True)
 os.remove('C:\RPA/2022.csv.zip')
 
-# # Create a sample dataframe
-# df = pd.read_csv('licitacao.csv')
-#
-# # Convert the date to datetime64
-# df['DT_A'] = pd.to_datetime(df['date'], format='%Y-%m-%d')
-#
-# # Filter data between two dates
-# filtered_df = df.loc[(df['date'] >= '2020-09-01')
-#                      & (df['date'] < '2020-09-15')]
-# # Display
-# filtered_df
+
+primeiras_linhas = Teste.filtrar_linhas()
+Teste.gera_pastas(primeiras_linhas)
 
 tkinter.messagebox.showinfo(title='Bot do Pedrao', message='Processo Concluido')
