@@ -30,11 +30,15 @@ def gera_pastas(firstRows):
         cdTipoModalidade = row['CD_TIPO_MODALIDADE']
         nrLicitacao = int(row['NR_LICITACAO'])
         anoLicitacao = row['ANO_LICITACAO']
+        linkLicitacao = row['LINK_LICITACON_CIDADAO']
 
+        path = f'{arquivosGerados}{cdOrgao} - {cdTipoModalidade} - {nrLicitacao} - {anoLicitacao}'
+        link = 'link.txt'
         os.makedirs(f'{arquivosGerados}{cdOrgao} - {cdTipoModalidade} - {nrLicitacao} - {anoLicitacao}')
-        #print(f'{arquivosGerados}{cdOrgao} - {cdTipoModalidade} - {nrLicitacao} - {anoLicitacao}')
+        arquivo = open(f'{path}\{link}', "a")
+        arquivo.write(linkLicitacao)
+
 
 
 #primeirasLinhas = Teste.filtrar_linhas()
 #apaga_arquivos_temp()
-

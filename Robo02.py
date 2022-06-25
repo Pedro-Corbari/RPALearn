@@ -7,26 +7,33 @@ import rpa as r
 import pyautogui as p
 from tkinter import messagebox
 import Teste
+import wget
 
 
 
-
-def convertDate(date):
-    return datetime.datetime.strptime(str(date), '%d/%m/%Y')  # .strftime('%Y-%m-%d')
+# def convertDate(date):
+#     return datetime.datetime.strptime(str(date), '%d/%m/%Y')  # .strftime('%Y-%m-%d')
 
 if not os.path.exists('C:\RPA\ArquivosDescompactados'):
     os.makedirs('C:\RPA\ArquivosDescompactados')
-r.init()
-janela = p.getActiveWindow()
-janela.maximize()
-r.url('http://dados.tce.rs.gov.br/organization/tribunal-de-contas-do-estado-do-rio-grande-do-sul')
-p.sleep(2)
-r.type('//*[@id="field-giant-search"]', 'Licitações Consolidado 2022[enter]')
-r.click('//*[@id="content"]/div[3]/div/article/div/ul/li[1]/div/h3/a')
-r.wait(2.0)
-r.click('//*[@id="dataset-resources"]/ul/li/div/button')
-r.wait(2.0)
-r.click('//*[@id="dataset-resources"]/ul/li/div/ul/li[2]/a')
+
+
+# DOWNLOAD AUTOMATICO
+file_url = 'http://dados.tce.rs.gov.br/dados/licitacon/licitacao/ano/2022.csv.zip'
+file = '2022.csv.zip'
+wget.download(file_url)
+
+# r.init()
+# janela = p.getActiveWindow()
+# janela.maximize()
+# r.url('http://dados.tce.rs.gov.br/organization/tribunal-de-contas-do-estado-do-rio-grande-do-sul')
+# p.sleep(2)
+# r.type('//*[@id="field-giant-search"]', 'Licitações Consolidado 2022[enter]')
+# r.click('//*[@id="content"]/div[3]/div/article/div/ul/li[1]/div/h3/a')
+# r.wait(2.0)
+# r.click('//*[@id="dataset-resources"]/ul/li/div/button')
+# r.wait(2.0)
+# r.click('//*[@id="dataset-resources"]/ul/li/div/ul/li[2]/a')
 
 
 while not os.path.isfile('2022.csv.zip'):
